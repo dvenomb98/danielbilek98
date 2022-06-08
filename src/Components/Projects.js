@@ -4,10 +4,7 @@ import data from "../data"
 
 function Projects({language}) {
 
-    console.log(data[0])
-
-
-console.log(data)
+   
 
 
   return (
