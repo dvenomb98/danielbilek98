@@ -32,7 +32,7 @@ function Form({language}) {
     })
 }
 
-const notify = () => toast.success(`${!language ? "Zpráva byla úspěšně odeslána!" : "Your message was successfuly sended!"}`, {
+const notify = () => toast.success(`${!language ? "Zpráva byla úspěšně odeslána!" : "Your message was successfully sended!"}`, {
   position: "bottom-center",
   autoClose: 5000,
   hideProgressBar: false,
@@ -80,31 +80,31 @@ const validate = (values) => {
   
 
   if (!values.firstName) {
-    errors.firstName = language ? "Jméno je vyžadováno!" : "Name is required!"
+    errors.firstName = !language ? "Jméno je vyžadováno!" : "Name is required!"
     }
     
     else if(!alphaRegex.test(values.firstName)) {
-      errors.firstName = language ? "Jméno obsahuje nepovolené znaky!" : "Name contains disallowed characters!"
+      errors.firstName = !language ? "Jméno obsahuje nepovolené znaky!" : "Name contains disallowed characters!"
     }
   
   if (!values.lastName) {
-    errors.lastName = language ? "Příjmení je vyžadováno!" : "Surname is required!"
+    errors.lastName = !language ? "Příjmení je vyžadováno!" : "Surname is required!"
   }
   
   else if(!alphaRegex.test(values.lastName)) {
-    errors.lastName =language ? "Příjmení obsahuje nepovolené znaky!" : "Surname contains disallowed characters!"
+    errors.lastName = !language ? "Příjmení obsahuje nepovolené znaky!" : "Surname contains disallowed characters!"
   }
 
   if (!values.email) {
-    errors.email = language ? "Email je vyžadován!" : "Email is required!"
+    errors.email = !language ? "Email je vyžadován!" : "Email is required!"
   }
   else if(!regex.test(values.email)) {
-    errors.email = language ? "Emailová adresa není správná!" : "Email adress is not correct!"
+    errors.email = !language ? "Emailová adresa není správná!" : "Email adress is not correct!"
   }
   
 
   if (!values.text) {
-    errors.text = language ? "Zpráva je vyžadována!" : "Message is required!"
+    errors.text = !language ? "Zpráva je vyžadována!" : "Message is required!"
   }
 
   return errors;
